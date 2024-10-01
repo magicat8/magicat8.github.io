@@ -1,3 +1,7 @@
+body {
+    color: white;
+    background-color: black;
+}
 .main {
     float: left;
     width: 20.00%;
