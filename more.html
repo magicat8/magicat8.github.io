@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Magicat8 Temp</title>
+    <meta name="darkreader-lock">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+    </div>
+
+    <h1>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        The wonderfull
+        world of my GitHub webpage
+    </h1>
+
+    <div class="main">
+        <h2>
+            More about me
+        </h2>
+        <p>
+            Welocme to the about me section. 
+            As you made the bad decision to be here,
+            you now have to read all about me. Yay!!!
+        </p>
+        <h3>
+            My hobbies
+        </h3>
+        <ol>
+            <li>
+                Codeing
+                <p>
+                    One of my favorite things to do in my free time
+                    is to code/program primarily with python. Here
+                    is a list of my favorite programs I have made.
+                </p>
+                <ul>
+                    <li>
+                        <a href="https://github.com/magicat8/Words/tree/main">Words</a>
+                        <p>
+                            My first big github repository
+                            is words. This program involves all things
+                            words like finding palindromes, translating 
+                            pig latin, and reversing words.
+                        </p>
+                    </li>
+                    
+                    <li>
+                        <a href="https://github.com/magicat8/Sneaky-S0ng/releases">$neaky S0ng</a>
+                        <p>
+                            This is the first published and by far my favorite
+                            GitHub repository so far. It takes any English and German
+                            letters, plus all charicters on a standerd us keyboard
+                            and encrypts it to music notation. 
+                        </p>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                Reading
+            </li>
+        </ol>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+</body>
+
+</html>
