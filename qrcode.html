@@ -1,32 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <link rel="stylesheet" href="assets/main_style.css">
     <title>Magicat8 Home</title>
     <meta name="darkreader-lock">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.9.5/brython.min.js"></script>
 </head>
 
-<body>
+<body onload="brython()">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
         <a href="more.html">More</a>
-        <a href="qrcode.html">QR Code Writer</a>
     </div>
 
     <h1>
         <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-        The wonderfull world of my GitHub webpage
+        The wonderful world of my GitHub webpage
     </h1>
+    <h2>QR Code Generator</h2>
+    <form>
+        <h6>Enter Url</h6>
+        <input type="text" id="name" name="name">
+        <button type="button" id="submit-button">Submit</button>
+    </form>
+    <p id="output"></p>
 
-    <div class="main">
-        <h2>Welcome to the account of Magicat8.</h2>
-        <p>
-            I am the creater of many random projects that really don't solve any problems. I just made them because why
-            not.
-        </p>
-    </div>
+    <script type="text/python">
+        from browser import document, alert
+
+        def submit_data(event):
+            name_input = document["name"].value  # Get the value of the input field
+            document["output"].text = f"Hello, {name_input}!"  # Display the personalized greeting
+
+        # Bind the submit_data function to the button click event
+        document["submit-button"].bind("click", submit_data)
+    </script>
 
     <script>
         function openNav() {
