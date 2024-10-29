@@ -30,13 +30,11 @@
 
     <script type="text/python">
         from browser import document, alert
+        import segno
 
         def submit_data(event):
             name_input = document["name"].value  # Get the value of the input field
-            document["output"].text = f"Hello, {name_input}!"  # Display the personalized greeting
-
-        # Bind the submit_data function to the button click event
-        document["submit-button"].bind("click", submit_data)
+            segno.make_qr(name_input)
     </script>
 
     <script>
