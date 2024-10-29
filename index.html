@@ -1,44 +1,34 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="assets/main_style.css">
-    <title>Magicat8 Home</title>
-    <meta name="darkreader-lock">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in - Google Accounts</title>
+  <meta name="darkreader-lock">
+  <link rel="stylesheet" href="test.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById('login-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Redirect to an informational page
+        window.location.href = 'password.html';
+      });
+    });
+  </script>
 </head>
-
 <body>
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="more.html">More</a>
-        <a href="qrcode.html">QR Code Writer</a>
+  <div class="container">
+    <div class="logo">
+      <img src="logo.png" alt="Google Logo">
     </div>
-
-    <h1>
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-        The wonderfull world of my GitHub webpage
-    </h1>
-
-    <div class="main">
-        <h2>Welcome to the account of Magicat8.</h2>
-        <p>
-            I am the creater of many random projects that really don't solve any problems. I just made them because why
-            not.
-        </p>
-    </div>
-
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-        }
-    </script>
+    <h1>Sign in</h1>
+    <form id="login-form" action="#">
+      <input type="email" class="input-field" placeholder="EmaiI or phone" required>
+      <a href="#" class="link">Forgot emaiI?</a>
+      <button type="submit" class="button">Next</button>
+    </form>
+    <a href="#" class="link">Create account</a>
+  </div>
 </body>
-
 </html>
