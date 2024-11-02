@@ -1,0 +1,22 @@
+name: Edit File
+
+on:
+  repository_dispatch:
+    types: [edit_file]
+
+jobs:
+  edit-file:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Update file
+      run: |
+        echo "${{ github.event.client_payload.content }}" | base64 --decode > ${{ github.event.client_payload.path }}
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git add ${{ github.event.client_payload.path }}
+        git commit -m "Edit file from GitHub Pages"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
