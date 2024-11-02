@@ -14,7 +14,7 @@ jobs:
       run: |
         echo "${{ github.event.client_payload.content }}" | base64 --decode > ${{ github.event.client_payload.path }}
         git config --global user.email "magicat8bill@gmail.com"
-        git config --global user.name "Ymagicat8"
+        git config --global user.name "magicat8"
         git add ${{ github.event.client_payload.path }}
         git commit -m "Edit file from GitHub Pages"
         git push
