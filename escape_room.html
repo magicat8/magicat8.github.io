@@ -86,6 +86,42 @@
             audioElement.play().catch(error => console.log("Autoplay prevented: " + error));
         }
         
+        function checkLyric() {
+            let answer = document.getElementById("lyricInput").value.trim().toLowerCase();
+            if (answer === "just dance") {
+                nextAct('act1', 'act2');
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function checkSwift() {
+            let answer = document.getElementById("swiftInput").value.trim().toLowerCase();
+            if (answer === "midnights") {
+                nextAct('act3', 'act4');
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function checkRemix() {
+            let answer = document.getElementById("remixInput").value.trim().toLowerCase();
+            if (answer === "shallow") {
+                alert("Congratulations! You have escaped the Lady in Red's trap!");
+            } else {
+                alert("Incorrect! Try again.");
+            }
+        }
+
+        function nextAct(current, next) {
+            document.getElementById(current).classList.add("hidden");
+            document.getElementById(next).classList.remove("hidden");
+        }
+
+        function wrongChoice() {
+            alert("The Lady in Red cackles. Try again.");
+        }
+
         audioElement.addEventListener("ended", function() {
             currentTrack = (currentTrack + 1) % tracks.length;
             audioElement.src = tracks[currentTrack];
