@@ -70,6 +70,26 @@
     </style>
 </head>
 <body>
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="Abracadabra.mp3" type="audio/mpeg">
+        <source src="Poker Face.mp3" type="audio/mpeg">
+        <source src="Bad Romance.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        const tracks = ["Abracadabra.mp3", "Poker Face.mp3", "Bad Romance.mp3"];
+        let currentTrack = 0;
+        const audioElement = document.getElementById("backgroundMusic");
+        
+        audioElement.src = tracks[currentTrack];
+        audioElement.play();
+        
+        audioElement.addEventListener("ended", function() {
+            currentTrack = (currentTrack + 1) % tracks.length;
+            audioElement.src = tracks[currentTrack];
+            audioElement.play();
+        });
+    </script>
+    
     <div class="container">
         <h1 class="flicker">Welcome to The Red Enchantment</h1>
         <p>The Lady in Red has trapped you in her endless concert. Solve the puzzles to escape before the final encore.</p>
@@ -113,46 +133,5 @@
             <button onclick="checkRemix()">Submit</button>
         </div>
     </div>
-
-    <script>
-        function startGame() {
-            document.querySelector("button").style.display = "none";
-            document.getElementById("act1").classList.remove("hidden");
-        }
-        function nextAct(current, next) {
-            document.getElementById(current).classList.add("hidden");
-            document.getElementById(next).classList.remove("hidden");
-        }
-        function checkLyric() {
-            let answer = document.getElementById("lyricInput").value.toLowerCase();
-            if (answer === "da da doo doo") {
-                nextAct('act1', 'act2');
-            } else {
-                alert("Incorrect! Try again.");
-            }
-        }
-        function checkSwift() {
-            let answer = document.getElementById("swiftInput").value.toLowerCase();
-            if (answer === "midnights") {
-                nextAct('act3', 'act4');
-            } else {
-                alert("Incorrect! Try again.");
-            }
-        }
-        function checkRemix() {
-            let answer = document.getElementById("remixInput").value.toLowerCase();
-            if (answer === "shallow") {
-                endGame();
-            } else {
-                alert("Incorrect! Try again.");
-            }
-        }
-        function wrongChoice() {
-            alert("Wrong path! Try again.");
-        }
-        function endGame() {
-            alert("Congratulations! You have escaped the Red Enchantment!");
-        }
-    </script>
 </body>
 </html>
