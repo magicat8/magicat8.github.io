@@ -10,7 +10,7 @@
 
         body {
             font-family: 'Cinzel', serif;
-            background: url('https://static1.colliderimages.com/wordpress/wp-content/uploads/2025/02/videoframe_262299.png') no-repeat center center fixed;
+            background: url('assets/lady gaga.avif') no-repeat center center fixed;
             background-size: cover;
             color: white;
             text-align: center;
@@ -94,13 +94,13 @@
     <audio id="backgroundMusic">
     </audio>
     <script>
-        const tracks = ["Abracadabra.mp3", "Poker Face.mp3", "Bad Romance.mp3"];
+        const tracks = ["assets/Abracadabra.mp3", "assets/Poker Face.mp3", "assets/Bad Romance.mp3"];
         let currentTrack = 0;
         const audioElement = document.getElementById("backgroundMusic");
-        
+
         // Initialize audio settings
         audioElement.volume = 0.5;
-        
+
         function startGame() {
             document.getElementById("act1").classList.remove("hidden");
             playTrack();
@@ -154,7 +154,7 @@
         function checkRemix() {
             let answer = document.getElementById("remixInput").value.trim().toLowerCase();
             if (answer === "shallow") {
-                alert("Congratulations! You have escaped the Lady in Red's trap!");
+                window.location.href = "billie_eilish.html";
             } else {
                 alert("Incorrect! Try again.");
             }
@@ -165,53 +165,60 @@
             document.getElementById(next).classList.remove("hidden");
         }
 
+        function hideButton() {
+            document.querySelector('button').style.display = "none";
+        }
+
         function wrongChoice() {
             alert("The Lady in Red cackles. Try again.");
         }
     </script>
 
     <div class="container">
-        <h1 class="flicker">Welcome to The Red Enchantment</h1>
-        <p>The Lady in Red has trapped you in her endless concert. Solve the puzzles to escape before the final encore.
-        </p>
-        <button onclick="startGame()">Begin</button>
+        <div id="lady gaga">
+            <h1 class="flicker">Welcome to The Red Enchantment</h1>
+            <p>The Lady in Red has trapped you in her endless concert. Solve the puzzles to escape before the final
+                encore.
+            </p>
+            <button onclick="startGame(); hideButton()">Begin</button>
 
-        <div id="act1" class="act hidden">
-            <h2>Act I: The Masked Mirage</h2>
-            <p>Solve the lyric puzzle to unlock the next stage.</p>
-            <p>Fill in the missing lyrics from this famous pop song:</p>
-            <p>"Just dance, gonna be okay, ______ ______"</p>
-            <input type="text" id="lyricInput">
-            <button onclick="checkLyric()">Submit</button>
-        </div>
+            <div id="act1" class="act hidden">
+                <h2>Act I: The Masked Mirage</h2>
+                <p>Solve the lyric puzzle to unlock the next stage.</p>
+                <p>Fill in the missing lyrics from this famous pop song:</p>
+                <p>"Just dance, gonna be okay, ______ ______"</p>
+                <input type="text" id="lyricInput">
+                <button onclick="checkLyric()">Submit</button>
+            </div>
 
-        <div id="act2" class="act hidden">
-            <h2>Act II: The Chromatica Labyrinth</h2>
-            <p>Navigate through the neon maze. Choose the correct path:</p>
-            <button onclick="nextAct('act2', 'act3')">Follow the Rain on Me Path</button>
-            <button onclick="wrongChoice()">Follow the Stupid Love Path</button>
-        </div>
+            <div id="act2" class="act hidden">
+                <h2>Act II: The Chromatica Labyrinth</h2>
+                <p>Navigate through the neon maze. Choose the correct path:</p>
+                <button onclick="nextAct('act2', 'act3')">Follow the Rain on Me Path</button>
+                <button onclick="wrongChoice()">Follow the Stupid Love Path</button>
+            </div>
 
-        <div id="act3" class="act hidden">
-            <h2>Act III: The Midnight Hour</h2>
-            <p>Decode the Swiftie Easter eggs to proceed.</p>
-            <p>Which Taylor Swift album features "Anti-Hero"?</p>
-            <input type="text" id="swiftInput">
-            <button onclick="checkSwift()">Submit</button>
-        </div>
+            <div id="act3" class="act hidden">
+                <h2>Act III: The Midnight Hour</h2>
+                <p>Decode the Swiftie Easter eggs to proceed.</p>
+                <p>Which Taylor Swift album features "Anti-Hero"?</p>
+                <input type="text" id="swiftInput">
+                <button onclick="checkSwift()">Submit</button>
+            </div>
 
-        <div id="act4" class="act hidden">
-            <h2>Act IV: The Fame’s Illusion</h2>
-            <p>The Lady in Red offers you fame. Will you sign the contract?</p>
-            <button onclick="nextAct('act4', 'act5')">Reject and Escape</button>
-            <button onclick="wrongChoice()">Sign and Stay Forever</button>
-        </div>
+            <div id="act4" class="act hidden">
+                <h2>Act IV: The Fame’s Illusion</h2>
+                <p>The Lady in Red offers you fame. Will you sign the contract?</p>
+                <button onclick="nextAct('act4', 'act5')">Reject and Escape</button>
+                <button onclick="wrongChoice()">Sign and Stay Forever</button>
+            </div>
 
-        <div id="act5" class="act hidden">
-            <h2>Final Act: The Grand Exit</h2>
-            <p>Rearrange the words to form a hit pop song title: "Gaga Shallow Bradley Cooper"</p>
-            <input type="text" id="remixInput">
-            <button onclick="checkRemix()">Submit</button>
+            <div id="act5" class="act hidden">
+                <h2>Final Act: The Grand Exit</h2>
+                <p>Rearrange the words to form a hit pop song title: "Gaga Shallow Bradley Cooper"</p>
+                <input type="text" id="remixInput">
+                <button onclick="checkRemix()">Submit</button>
+            </div>
         </div>
     </div>
 </body>
