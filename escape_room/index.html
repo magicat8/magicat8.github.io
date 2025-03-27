@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Red Enchantment - Escape Room</title>
+    <link rel="stylesheet" href="assets/css/main_style.css">
+</head>
+
+<body>
+    <audio id="backgroundMusic">
+    </audio>
+    
+    <script src="assets/js/main.js"></script>
+
+    <div class="container">
+        <div id="lady gaga">
+            <h1 class="flicker">Welcome to The Red Enchantment</h1>
+            <p>
+              The Lady in Red has trapped you in her endless concert. Solve the puzzles to escape before the final
+              encore.
+            </p>
+            <button onclick="startGame(); hideButton()">Begin</button>
+
+            <div id="question" class="hidden">
+                <h2>Act I: The Masked Mirage</h2>
+                <p>Solve the lyric puzzle to unlock the next stage.</p>
+                <p>Fill in the missing lyrics from this famous pop song:</p>
+                <p>"Just dance, gonna be okay, ______ ______"</p>
+                <input type="text" id="input">
+                <button onclick="submit()">Submit</button>
+            </div>
+            
+            <div id="incorrect" class="hidden">
+                <h2>Incorrect</h2>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
